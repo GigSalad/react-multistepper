@@ -2,10 +2,6 @@
 
 The purpose of this is to abstract our step-by-step form logic into a reuseable React/Redux component.
 
-The structure of this is a little strange.  In our production app our actions, reducers, and selectors are in a `store` directory that is easily imported from.
-
-Here, everything is grouped under the `multistepper` directory.  Everything outside of this directory is used to implement an example of the use of `Multistepper`.
-
 ## Actions/Reducers
 
 ### steps.js
