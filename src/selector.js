@@ -1,5 +1,8 @@
 
-export function getNextStep(state, currentStep) {
+export function getNextStep(state = {}, currentStep = -1) {
+	if (typeof state.steps === 'undefined') {
+		return -1;
+	}
 	if (typeof currentStep == 'undefined') {
 		return getNextStep(state, -1);
 	}
