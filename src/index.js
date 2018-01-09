@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getNextStep } from './selector';
 import { addSteps } from './actions/steps';
-import { steps } from './reducers/steps';
-import { stepCounter } from './reducers/stepCounter';
+import steps from './reducers/steps';
+import stepCounter from './reducers/stepCounter';
 
 let mapStateToProps = function mapStateToProps(state) {
 	return {
@@ -42,4 +42,10 @@ Multistepper = connect(
 	mapDispatchToProps
 )(Multistepper);
 
-export default Multistepper;
+// export default Multistepper;
+
+module.exports = {
+	Multistepper,
+	steps,
+	stepCounter
+};

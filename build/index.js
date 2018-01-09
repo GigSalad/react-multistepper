@@ -1587,6 +1587,7 @@ var _steps = __webpack_require__(8);
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
+console.log('hi im reducer');
 function steps() {
 	var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
 	var action = arguments[1];
@@ -1759,10 +1760,6 @@ function goToSpecificStep(step) {
 "use strict";
 
 
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(1);
@@ -1779,7 +1776,11 @@ var _steps = __webpack_require__(8);
 
 var _steps2 = __webpack_require__(21);
 
+var _steps3 = _interopRequireDefault(_steps2);
+
 var _stepCounter = __webpack_require__(20);
+
+var _stepCounter2 = _interopRequireDefault(_stepCounter);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1836,7 +1837,13 @@ var Multistepper = function (_React$Component) {
 
 Multistepper = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Multistepper);
 
-exports.default = Multistepper;
+// export default Multistepper;
+
+module.exports = {
+	Multistepper: Multistepper,
+	steps: _steps3.default,
+	stepCounter: _stepCounter2.default
+};
 
 /***/ }),
 /* 26 */

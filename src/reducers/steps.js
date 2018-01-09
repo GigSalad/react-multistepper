@@ -1,5 +1,6 @@
 import { ADD_STEPS, REMOVE_STEPS_BY_TAG, REMOVE_STEP_ATTRIBUTE, ADD_STEP_ATTRIBUTE } from '../actions/steps.js';
 
+console.log('hi im reducer');
 export default function steps(state = [], action) {
 	let newState = [];
 	switch (action.type) {
