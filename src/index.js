@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getNextStep } from './selector';
 import { addSteps } from './actions/steps';
-import { steps as stepsReducer } from './reducers/steps';
-import { stepCounter as stepCounterReducer } from './reducers/stepCounter';
+import { steps } from './reducers/steps';
+import { stepCounter } from './reducers/stepCounter';
 
 let mapStateToProps = function mapStateToProps(state) {
 	return {
