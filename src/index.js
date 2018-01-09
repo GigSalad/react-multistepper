@@ -5,6 +5,8 @@ import { getNextStep } from './selector';
 import { addSteps } from './actions/steps';
 import steps from './reducers/steps';
 import stepCounter from './reducers/stepCounter';
+import * as stepsActions from './actions/steps';
+import * as stepCounterActions from './actions/stepCounter';
 
 let mapStateToProps = function mapStateToProps(state) {
 	return {
@@ -47,5 +49,7 @@ Multistepper = connect(
 module.exports = {
 	Multistepper,
 	steps,
-	stepCounter
+	stepCounter,
+	stepsActions,
+	stepCounterActions
 };
