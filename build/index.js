@@ -1831,11 +1831,16 @@ var Multistepper = function (_React$Component) {
 	}, {
 		key: 'render',
 		value: function render() {
-			return _react2.default.createElement(
-				'div',
-				null,
-				this.props.children(this.props.stepObject)
-			);
+
+			if (typeof this.props.children !== 'function' || typeof this.props.stepObject !== 'undefined') {
+				return _react2.default.createElement(
+					'div',
+					null,
+					this.props.children(this.props.stepObject)
+				);
+			} else {
+				return _react2.default.createElement('div', null);
+			}
 		}
 	}]);
 

@@ -28,11 +28,16 @@ class Multistepper extends React.Component {
 		}
 	}
 	render() {
-		return (
-			<div>
-				{this.props.children(this.props.stepObject)}
-			</div>
-		);
+
+		if (typeof this.props.children !== 'function' || typeof this.props.stepObject !== 'undefined') {
+			return (
+				<div>
+					{this.props.children(this.props.stepObject)}
+				</div>
+			);
+		} else {
+			return <div></div>;
+		}
 	}
 }
 
