@@ -1,18 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { getNextStep } from './selector';
 import { addSteps } from './actions/steps';
 import steps from './reducers/steps';
 import stepCounter from './reducers/stepCounter';
 import * as stepsActions from './actions/steps';
 import * as stepCounterActions from './actions/stepCounter';
+import * as multistepperSelectors from './selector';
 
 let mapStateToProps = function mapStateToProps(state) {
 	return {
-		nextStepIndex: getNextStep(state, state.stepCounter),
-		stepCounter: state.stepCounter,
-		steps: state.steps,
 		stepObject: state.steps[state.stepCounter]
 	}
 };
@@ -51,5 +48,6 @@ module.exports = {
 	steps,
 	stepCounter,
 	stepsActions,
-	stepCounterActions
+	stepCounterActions,
+	multistepperSelectors
 };

@@ -1770,8 +1770,6 @@ var _reactRedux = __webpack_require__(24);
 
 var _redux = __webpack_require__(10);
 
-var _selector = __webpack_require__(23);
-
 var _steps = __webpack_require__(9);
 
 var stepsActions = _interopRequireWildcard(_steps);
@@ -1788,6 +1786,10 @@ var _stepCounter3 = __webpack_require__(8);
 
 var stepCounterActions = _interopRequireWildcard(_stepCounter3);
 
+var _selector = __webpack_require__(23);
+
+var multistepperSelectors = _interopRequireWildcard(_selector);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -1800,9 +1802,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var mapStateToProps = function mapStateToProps(state) {
 	return {
-		nextStepIndex: (0, _selector.getNextStep)(state, state.stepCounter),
-		stepCounter: state.stepCounter,
-		steps: state.steps,
 		stepObject: state.steps[state.stepCounter]
 	};
 };
@@ -1852,7 +1851,8 @@ module.exports = {
 	steps: _steps3.default,
 	stepCounter: _stepCounter2.default,
 	stepsActions: stepsActions,
-	stepCounterActions: stepCounterActions
+	stepCounterActions: stepCounterActions,
+	multistepperSelectors: multistepperSelectors
 };
 
 /***/ }),
