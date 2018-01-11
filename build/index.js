@@ -1802,13 +1802,17 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var mapStateToProps = function mapStateToProps(state) {
 	return {
-		stepObject: state.steps[state.stepCounter]
+		stepObject: state.steps[state.stepCounter],
+		steps: state.steps,
+		stepCounter: state.stepCounter,
+		nextStepIndex: multistepperSelectors.getNextStep(state, state.stepCounter)
 	};
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 	return (0, _redux.bindActionCreators)({
-		addSteps: _steps.addSteps
+		addSteps: _steps.addSteps,
+		goToSpecificStep: stepCounterActions.goToSpecificStep
 	}, dispatch);
 };
 
@@ -1826,6 +1830,15 @@ var Multistepper = function (_React$Component) {
 		value: function componentDidMount() {
 			if (this.props.initialSteps) {
 				this.props.addSteps(this.props.initialSteps);
+			} else if (this.props.steps.length && this.props.stepCounter === -1 && this.props.nextStepIndex !== -1) {
+				this.props.goToSpecificStep(this.props.nextStepIndex);
+			}
+		}
+	}, {
+		key: 'componentDidUpdate',
+		value: function componentDidUpdate(prevProps) {
+			if (!prevProps.steps.length && this.props.steps.length && this.props.stepCounter === -1 && this.props.nextStepIndex !== -1) {
+				this.props.goToSpecificStep(this.props.nextStepIndex);
 			}
 		}
 	}, {
