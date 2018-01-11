@@ -11,8 +11,6 @@ import * as multistepperSelectors from './selector';
 let mapStateToProps = function mapStateToProps(state) {
 	return {
 		stepObject: state.steps[state.stepCounter],
-		steps: state.steps,
-		stepCounter: state.stepCounter,
 		nextStepIndex: multistepperSelectors.getNextStep(state, state.stepCounter)
 	}
 };
@@ -29,13 +27,13 @@ class Multistepper extends React.Component {
 	componentDidMount() {
 		if (this.props.initialSteps) {
 			this.props.addSteps(this.props.initialSteps);
-		} else if (this.props.steps.length && this.props.stepCounter === -1 && this.props.nextStepIndex !== -1) {
+		} else if (typeof this.props.stepObject === 'undefined' && this.props.nextStepIndex !== -1) {
 			this.props.goToSpecificStep(this.props.nextStepIndex);
 		}
 	}
 
 	componentDidUpdate(prevProps) {
-		if (!prevProps.steps.length && this.props.steps.length && this.props.stepCounter === -1 && this.props.nextStepIndex !== -1) {
+		if (typeof this.props.stepObject === 'undefined' && this.props.nextStepIndex !== -1) {
 			this.props.goToSpecificStep(this.props.nextStepIndex);
 		}
 	}
