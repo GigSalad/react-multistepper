@@ -81,9 +81,9 @@ export function submitSteps(selector = (state) => state, endpointUrl = '') {
 		let options = {
 			method: 'POST',
 			headers: new Headers({
-				// 'Content-Type': 'application/json'
+				'Content-Type': 'application/json'
 			}),
-			body: selector(state)
+			body: JSON.stringify(selector(state))
 		}
 
 		return fetch(endpointUrl, options);
