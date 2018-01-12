@@ -1,6 +1,6 @@
 {
   "name": "react-multistepper",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Implement a step-by-step UI. Handling navigation and adding/removing steps.",
   "main": "build/index.js",
   "scripts": {
