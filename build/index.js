@@ -663,9 +663,11 @@ function submitSteps() {
 		// return promise;
 
 		var options = {
-			dataType: 'json',
-			type: 'POST',
-			body: selector(state)
+			method: 'POST',
+			headers: new Headers({
+				'Content-Type': 'application/json'
+			}),
+			body: JSON.stringify(selector(state))
 		};
 
 		return fetch(endpointUrl, options);
