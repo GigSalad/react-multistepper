@@ -83,7 +83,7 @@ export function submitSteps(selector = (state) => state, endpointUrl = '') {
 			headers: new Headers({
 				'Content-Type': 'application/json'
 			}),
-			body: JSON.stringify(selector(state))
+			body: selector(state)
 		}
 
 		return fetch(endpointUrl, options);
