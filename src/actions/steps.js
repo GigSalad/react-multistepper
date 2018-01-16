@@ -86,6 +86,7 @@ export function submitSteps(selector = (state) => state, endpointUrl = '') {
 			body: JSON.stringify(selector(state))
 		}
 
-		return fetch(endpointUrl, options).resolve();
+		// calling fetch().json() returns a promise who's result will contain the returned JSON
+		return fetch(endpointUrl, options).json();
 	}
 }
