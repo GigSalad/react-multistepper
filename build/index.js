@@ -670,7 +670,7 @@ function submitSteps() {
 			body: JSON.stringify(selector(state))
 		};
 
-		return fetch(endpointUrl, options);
+		return fetch(endpointUrl, options).resolve();
 	};
 }
 
