@@ -68,25 +68,26 @@ export function submitSteps(selector = (state) => state, endpointUrl = '') {
 			return Promise.resolve();
 		}
 
-		// var promise = Promise.resolve($.ajax({
-		// 	url: endpointUrl,
-		// 	dataType: 'json',
-		// 	type: 'POST',
-		// 	//contentType: "application/json",
-		// 	data: selector(state)
-		// }));
+		var data = new URLSearchParams();
+		let requestData = selector(state);
 
-		// return promise;
+		for (let item in requestData) {
+			if (typeof requestData[item] !== 'undefined') {
+				data.append(item, requestData[item]);
+			}
+		}
 
+		console.log('submitSteps data', data);
 		let options = {
 			method: 'POST',
+			credentials: 'same-origin',
 			headers: new Headers({
-				'Content-Type': 'application/json'
+				'Accept': 'application/json',
 			}),
-			body: JSON.stringify(selector(state))
+			body: data
 		}
 
 		// calling fetch().json() returns a promise who's result will contain the returned JSON
-		return fetch(endpointUrl, options).json();
+		return fetch(endpointUrl, options).then((res) => res.json());
 	}
 }
