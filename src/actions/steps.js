@@ -62,7 +62,6 @@ export function moveStepAttribute(attributeName = '', sourceIndex = 0, destIndex
 
 export function submitSteps(selector = (state) => state, endpointUrl = '') {
 	return (dispatch, getState) => {
-		console.log('submitSteps');
 		let state = getState();
 		if (!endpointUrl) {
 			return Promise.resolve();
@@ -77,7 +76,6 @@ export function submitSteps(selector = (state) => state, endpointUrl = '') {
 			}
 		}
 
-		console.log('submitSteps data', data);
 		let options = {
 			method: 'POST',
 			credentials: 'same-origin',

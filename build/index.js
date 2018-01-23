@@ -646,7 +646,6 @@ function submitSteps() {
 	var endpointUrl = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
 
 	return function (dispatch, getState) {
-		console.log('submitSteps');
 		var state = getState();
 		if (!endpointUrl) {
 			return Promise.resolve();
@@ -661,7 +660,6 @@ function submitSteps() {
 			}
 		}
 
-		console.log('submitSteps data', data);
 		var options = {
 			method: 'POST',
 			credentials: 'same-origin',
