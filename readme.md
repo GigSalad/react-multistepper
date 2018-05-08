@@ -23,7 +23,7 @@ The selectors we use here are `getNextStep` and `getPreviousStep`.  These select
 ## Structure of our array of steps
 
 The state handled by the `steps.js` actions and reducer is an array of objects.  These objects can be structured however you
-want but the examples here and how we will implment it on GS is like so...
+want but the examples here and how we will implment it on GS...
 
 ```
 [
@@ -40,7 +40,7 @@ want but the examples here and how we will implment it on GS is like so...
 
 The only attribute that is tightly coupled to this structure is that `conditional` is a function that returns a boolean. `conditional` is used by the `getNextStep` and `getPreviousStep` selectors to determine if a step should be rendered or skipped.
 
-And while it doesn't make much sense to use the `Multistepper` if your steps aren't going to do something with a component you technically could.  If you wanted to you could name your `component` attribute something else but that is similarly nonsensical.
+And while it doesn't make much sense to use the `Multistepper` if your steps aren't going to do something with a component you technically could.
 
 ## index.js
 
