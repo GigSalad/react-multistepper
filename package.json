@@ -8,9 +8,6 @@
     "start": "webpack --watch",
     "build": "webpack"
   },
-  "peerDependencies": {
-    "react": "^15.5.4"
-  },
   "dependencies": {
     "es6-promise": "^4.2.2",
     "react": "^16.3.2",
