@@ -59,7 +59,7 @@ Multistepper = connect(
 
 // export default Multistepper;
 
-module.exports = {
+export {
 	Multistepper,
 	steps,
 	stepCounter,
